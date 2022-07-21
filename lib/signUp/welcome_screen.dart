@@ -2,6 +2,7 @@
 
 import 'package:bizs_app/signUp/create_new_account.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -53,7 +54,7 @@ class WelcomeScreen extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  height: 100.w,
+                   height: 54.h,  
                   decoration: const BoxDecoration(
                     color: Color(0xFFDEF6E5),
                     boxShadow: [
@@ -66,6 +67,7 @@ class WelcomeScreen extends StatelessWidget {
                     padding:
                         const EdgeInsets.only(left: 40, right: 40, top: 30),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         const SizedBox(
                           height: 0,
@@ -170,8 +172,11 @@ class WelcomeScreen extends StatelessWidget {
                                 onTap: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const NewAccount()),
+                                    PageTransition(
+                                        type: PageTransitionType.fade,
+                                        duration:
+                                            const Duration(milliseconds: 300),
+                                        child: const NewAccount()),
                                   );
                                 },
                                 child: const Text(
@@ -182,7 +187,8 @@ class WelcomeScreen extends StatelessWidget {
                                       color: Color(0xFF0AA84C)),
                                 ))
                           ],
-                        )
+                        ),
+                        SizedBox(height: 5.h,),
                       ],
                     ),
                   ),

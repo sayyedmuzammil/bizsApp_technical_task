@@ -2,6 +2,7 @@
 
 import 'package:bizs_app/signUp/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
 class FillUserDetails extends StatelessWidget {
@@ -37,7 +38,7 @@ class FillUserDetails extends StatelessWidget {
               height: 5.5.h,
             ),
             Container(
-              height: 52.h,
+              height: 57.h,    
               decoration: BoxDecoration(
                 color: const Color(0xFFF5FFFA),
                 boxShadow: [
@@ -45,15 +46,15 @@ class FillUserDetails extends StatelessWidget {
                       color: const Color(0xFF0AA74B).withOpacity(.52),
                       spreadRadius: 1),
                 ],
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(30)),
               ),
               child: Padding(
                 padding: const EdgeInsets.only(left: 40, right: 40, top: 30),
                 child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
                   children: [
-                    const SizedBox(
-                      height: 0,
-                    ),
+                    
                     const Text(
                       "Please fill your real name it will help your known \npeople to find you on BizsApp",
                       style: TextStyle(
@@ -121,7 +122,6 @@ class FillUserDetails extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-             
                     const SizedBox(
                       height: 15,
                     ),
@@ -155,8 +155,10 @@ class FillUserDetails extends StatelessWidget {
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(
-                                    builder: (context) => WelcomeScreen()),
+                                PageTransition(
+                                    type: PageTransitionType.fade,
+                                    duration: const Duration(milliseconds: 300),
+                                    child: WelcomeScreen()),
                               );
                             },
                             child: const Text(
@@ -165,7 +167,8 @@ class FillUserDetails extends StatelessWidget {
                                   fontSize: 11, color: Color(0xFF0AA84C)),
                             ))
                       ],
-                    )
+                    ),
+                    SizedBox(height: 5.h,), 
                   ],
                 ),
               ),

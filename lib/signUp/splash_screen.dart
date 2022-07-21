@@ -2,6 +2,7 @@
 
 import 'package:bizs_app/signUp/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,7 +22,10 @@ class _SplashScreenState extends State<SplashScreen> {
   _navigateToWelcome() async {
     await Future.delayed(const Duration(seconds: 3), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
+        context, PageTransition(
+          type: PageTransitionType.fade, 
+          duration: Duration(milliseconds: 300),
+          child: WelcomeScreen()));
   }
 
   @override

@@ -2,6 +2,7 @@ import 'package:bizs_app/signUp/fillUserDetails.dart';
 import 'package:bizs_app/signUp/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
 class OtpAuthentication extends StatelessWidget {
@@ -37,7 +38,7 @@ class OtpAuthentication extends StatelessWidget {
               children: [
                 Container(
                   // alignment: Alignment.bottomCenter,
-                  height: 90.w,
+                  height: 51.h,  
                   decoration: BoxDecoration(
                     color: const Color(0xFFF5FFFA),
                     // border: Border(top: BorderSide(color: Colors.black, width: 3)),
@@ -55,6 +56,7 @@ class OtpAuthentication extends StatelessWidget {
                     padding:
                         const EdgeInsets.only(left: 40, right: 40, top: 30),
                     child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,  
                       children: [
                         const SizedBox(
                           height: 0,
@@ -151,13 +153,14 @@ class OtpAuthentication extends StatelessWidget {
                                 textStyle: const TextStyle(fontSize: 16),
                               ),
                               onPressed: () {
-                                  
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => FillUserDetails()),
-                                  );
-                            
+                                Navigator.push(
+                                  context,
+                                  PageTransition(
+                                      type: PageTransitionType.fade,
+                                      duration:
+                                          const Duration(milliseconds: 100), 
+                                      child: FillUserDetails()),
+                                );
                               },
                               child: const Text(
                                 'Verify',
@@ -187,8 +190,11 @@ class OtpAuthentication extends StatelessWidget {
                                 onTap: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(
-                                        builder: (context) => WelcomeScreen()),
+                                    PageTransition(
+                                        type: PageTransitionType.fade,
+                                        duration:
+                                            const Duration(milliseconds: 300),
+                                        child: WelcomeScreen()),
                                   );
                                 },
                                 child: const Text(
@@ -199,7 +205,8 @@ class OtpAuthentication extends StatelessWidget {
                                       color: Color(0xFF0AA84C)),
                                 ))
                           ],
-                        )
+                        ), 
+                        SizedBox(height: 5.h,),  
                       ],
                     ),
                   ),

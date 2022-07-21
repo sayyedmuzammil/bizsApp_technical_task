@@ -1,6 +1,7 @@
 import 'package:bizs_app/signUp/otp_authentication.dart';
 import 'package:bizs_app/signUp/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
 class NewAccount extends StatefulWidget {
@@ -43,10 +44,11 @@ class _NewAccountState extends State<NewAccount> {
               height: 12.h,
             ),
             Column(
+             
               children: [
                 Container(
                   // alignment: Alignment.bottomCenter,
-                  height: 90.w,
+                  height: 51.h,     
                   decoration: BoxDecoration(
                     color: const Color(0xFFF5FFFA),
                     // border: Border(top: BorderSide(color: Colors.black, width: 3)),
@@ -64,7 +66,9 @@ class _NewAccountState extends State<NewAccount> {
                     padding:
                         const EdgeInsets.only(left: 40, right: 40, top: 30),
                     child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,  
                       children: [
+
                         const SizedBox(
                           height: 0,
                         ),
@@ -85,7 +89,8 @@ class _NewAccountState extends State<NewAccount> {
                                 keyboardType: TextInputType.none,
                                 controller: _countryCode,
                                 decoration: InputDecoration(
-                                  contentPadding: const EdgeInsets.only(left: 12),
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 12),
                                   border: const OutlineInputBorder(),
                                   hintStyle: TextStyle(
                                       color: Colors.black.withOpacity(.3),
@@ -100,7 +105,8 @@ class _NewAccountState extends State<NewAccount> {
                                 keyboardType: TextInputType.number,
                                 controller: _mobileNumber,
                                 decoration: InputDecoration(
-                                  contentPadding: const EdgeInsets.only(left: 10),
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 10),
                                   border: const OutlineInputBorder(),
                                   hintStyle: TextStyle(
                                       color: Colors.black.withOpacity(.3),
@@ -112,11 +118,12 @@ class _NewAccountState extends State<NewAccount> {
                             InkWell(
                               onTap: () {
                                 Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const OtpAuthentication()),
-                                );
+                                    context,
+                                    PageTransition(
+                                        type: PageTransitionType.fade,
+                                        duration:
+                                            const Duration(milliseconds: 100), 
+                                        child: const OtpAuthentication()));
                               },
                               child: Container(
                                 width: 46,
@@ -147,7 +154,8 @@ class _NewAccountState extends State<NewAccount> {
                               style: TextStyle(
                                   fontSize: 11,
                                   fontWeight: FontWeight.bold,
-                                  color: const Color(0xFF0AA84C).withOpacity(.73)),
+                                  color:
+                                      const Color(0xFF0AA84C).withOpacity(.73)),
                             ),
                           ],
                         ),
@@ -222,10 +230,13 @@ class _NewAccountState extends State<NewAccount> {
                             InkWell(
                                 onTap: () {
                                   Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => WelcomeScreen()),
-                                  );
+                                      context,
+                                      PageTransition(
+                                        type: PageTransitionType.fade,
+                                        duration:
+                                            const Duration(milliseconds: 300),
+                                        child: WelcomeScreen(),
+                                      ));
                                 },
                                 child: const Text(
                                   "Login",
@@ -235,7 +246,8 @@ class _NewAccountState extends State<NewAccount> {
                                       color: Color(0xFF0AA84C)),
                                 ))
                           ],
-                        )
+                        ),
+                        SizedBox(height: 5.h,)
                       ],
                     ),
                   ),
