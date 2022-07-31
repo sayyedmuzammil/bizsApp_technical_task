@@ -22,10 +22,11 @@ class _SplashScreenState extends State<SplashScreen> {
   _navigateToWelcome() async {
     await Future.delayed(const Duration(seconds: 3), () {});
     Navigator.pushReplacement(
-        context, PageTransition(
-          type: PageTransitionType.fade, 
-          duration: Duration(milliseconds: 300),
-          child: WelcomeScreen()));
+        context,
+        PageTransition(
+            type: PageTransitionType.bottomToTop,
+            duration: const Duration(milliseconds: 500),
+            child: const WelcomeScreen()));
   }
 
   @override

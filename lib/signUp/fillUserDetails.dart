@@ -38,7 +38,7 @@ class FillUserDetails extends StatelessWidget {
               height: 5.5.h,
             ),
             Container(
-              height: 57.h,    
+              height: 57.h,
               decoration: BoxDecoration(
                 color: const Color(0xFFF5FFFA),
                 boxShadow: [
@@ -52,9 +52,8 @@ class FillUserDetails extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 40, right: 40, top: 30),
                 child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    
                     const Text(
                       "Please fill your real name it will help your known \npeople to find you on BizsApp",
                       style: TextStyle(
@@ -168,7 +167,9 @@ class FillUserDetails extends StatelessWidget {
                             ))
                       ],
                     ),
-                    SizedBox(height: 5.h,), 
+                    SizedBox(
+                      height: 7.h,
+                    ),
                   ],
                 ),
               ),

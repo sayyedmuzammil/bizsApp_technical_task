@@ -38,7 +38,7 @@ class OtpAuthentication extends StatelessWidget {
               children: [
                 Container(
                   // alignment: Alignment.bottomCenter,
-                  height: 51.h,  
+                  height: 51.h,
                   decoration: BoxDecoration(
                     color: const Color(0xFFF5FFFA),
                     // border: Border(top: BorderSide(color: Colors.black, width: 3)),
@@ -56,7 +56,7 @@ class OtpAuthentication extends StatelessWidget {
                     padding:
                         const EdgeInsets.only(left: 40, right: 40, top: 30),
                     child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,  
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         const SizedBox(
                           height: 0,
@@ -158,7 +158,7 @@ class OtpAuthentication extends StatelessWidget {
                                   PageTransition(
                                       type: PageTransitionType.fade,
                                       duration:
-                                          const Duration(milliseconds: 100), 
+                                          const Duration(milliseconds: 100),
                                       child: FillUserDetails()),
                                 );
                               },
@@ -205,8 +205,10 @@ class OtpAuthentication extends StatelessWidget {
                                       color: Color(0xFF0AA84C)),
                                 ))
                           ],
-                        ), 
-                        SizedBox(height: 5.h,),  
+                        ),
+                        SizedBox(
+                          height: 7.h,
+                        ),
                       ],
                     ),
                   ),
